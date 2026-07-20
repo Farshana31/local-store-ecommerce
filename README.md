@@ -13,4 +13,4 @@ A simple, user-friendly, and efficient E-commerce website tailored for local sho
 * Clean Code Structure: Standardized development with properly organized and separated HTML, CSS, and JavaScript files.
 * JSON Data Integration: Product details are managed dynamically using a centralized products.json file.
 * Local Storage Support: Cart data is securely retained even if the user refreshes or reloads the web page.
-* Fast Loading: Optimization with clean code ensuring ultra-fast loading speeds and lag-free operations
+* Fast Loading: Optimization with clean code ensuring ultra-fast loading speeds and lag-free operations.
