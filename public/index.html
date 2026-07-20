@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MegaStore | Premium E-commerce</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Modern Header Navigation -->
+    <header>
+        <div class="logo">MegaStore<span style="color:#2ed573;">.</span></div>
+        <div class="cart-btn" onclick="toggleCart()">
+            <i class="fas fa-shopping-bag"></i>
+            <span id="cart-count">0</span>
+        </div>
+    </header>
+
+    <!-- Attractive Banner Section -->
+    <section class="hero-banner">
+        <h1>Exclusive Deals on Premium Local Brands ⚡</h1>
+        <p>Explore high-quality products curated just for you with fast doorstep delivery.</p>
+    </section>
+
+    <main>
+        <!-- Dynamic Interactive Filter Bar -->
+        <section class="controls-bar">
+            <div class="control-group">
+                <label><i class="fas fa-filter"></i> Category</label>
+                <select id="category-filter" onchange="filterProducts()">
+                    <option value="all">All Categories</option>
+                    <option value="clothing">Clothing & Apparel</option>
+                    <option value="footwear">Premium Footwear</option>
+                    <option value="makeup">Makeup</option>
+                    <option value="perfume">Perfume & Accessories</option>
+</select>
+            </div>
+
+            <div class="control-group">
+                <label><i class="fas fa-sort"></i> Price Filter</label>
+                <select id="price-sort" onchange="sortProducts()">
+                    <option value="default">Featured</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Product Cards Container -->
+        <section class="products-grid" id="products-container">
+            <!-- Loaded dynamically via JavaScript -->
+        </section>
+    </main>
+
+    <!-- Sleek Slide-out Cart Panel -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        <div class="cart-header">
+            <h3><i class="fas fa-shopping-basket"></i> Shopping Bag</h3>
+            <span class="close-btn" onclick="toggleCart()">&times;</span>
+        </div>
+        <div class="cart-items" id="cart-items-container">
+            <!-- Cart Items code here -->
+        </div>
+        <div class="cart-footer">
+            <div class="total-row">
+                <span>Subtotal:</span>
+                <span>₹<span id="cart-total">0</span></span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Place Order Now</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
