@@ -17,5 +17,5 @@ app.get('/', (req, res) => {
 
 // Start the server cleanly
 app.listen(PORT, () => {
-    console.log(Server is running smoothly on port ${PORT});
+    console.log("Server is running smoothly on port " + ${PORT});
 });
