@@ -7,18 +7,15 @@ const PORT = process.env.PORT || 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve all frontend files (HTML, CSS, JS) from the root folder
-app.use(express.static(path.join(__dirname)));
+// Serve frontend static files (HTML, CSS, JS) from root folder
+app.use(express.static(__dirname));
 
-// Specific routes or API fallback if any (e.g., handling orders/products json if needed)
-// If you have specific API endpoints like app.get('/products'), they will work normally.
-
-// Fallback to serve index.html for any frontend route
-app.get('*', (req, res) => {
+// Fallback to serve index.html for root route
+app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-// Start the server
+// Start the server cleanly
 app.listen(PORT, () => {
-    console.log(`Server is running smoothly on port ${PORT}`);
+    console.log(Server is running smoothly on port ${PORT});
 });
