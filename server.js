@@ -54,3 +54,7 @@ app.post('/api/checkout', (req, res) => {
 
 
 app.listen(PORT, () => console.log(`🚀 Live Server running at http://localhost:${PORT}`));
+// Serve frontend static files
+const path = require('path');
+app.use(express.static(path.join(__dirname)));
+app.get('*', (req, res) => res.sendFile(path.join(__dirname, 'index.html')));
