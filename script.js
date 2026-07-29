@@ -95,7 +95,7 @@ function updateCartUI() {
 function checkout() {
     if(cart.length === 0) return alert("Your shopping bag is empty!");
 
-    fetch('/api/checkout', {
+    fetch('/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ items: cart, total: document.getElementById("cart-total").innerText })
