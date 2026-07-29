@@ -15,6 +15,11 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'index.html'));
 });
 
+//API Route to send product details to frontend
+app.get('/products', (req,res) => {
+    res.sendFile(path.join(__dirname,'products.json'));
+});
+
 // Start the server cleanly
 app.listen(PORT, () => {
     console.log("Server is running smoothly on port " + PORT);
