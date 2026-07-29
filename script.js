@@ -4,7 +4,7 @@ let displayedProducts = [];
 
 // Fetch data seamlessly from Backend
 document.addEventListener("DOMContentLoaded", () => {
-    fetch('/api/products')
+    fetch('/products')
         .then(res => res.json())
         .then(data => {
             products = data;
