@@ -20,6 +20,28 @@ app.get('/products', (req,res) => {
     res.sendFile(path.join(__dirname,'products.json'));
 });
 
+const fs = require('fs');
+
+// Checkout API to place order
+app.post('/checkout', (req, res) => {
+    const newOrder = req.body;
+    
+    fs.readFile(path.join(__dirname, 'orders.json'), 'utf8', (err, data) => {
+        let orders = [];
+        if (!err && data) {
+            orders = JSON.parse(data);
+        }
+        orders.push(newOrder);
+        
+        fs.writeFile(path.join(__dirname, 'orders.json'), JSON.stringify(orders, null, 2), (writeErr) => {
+            if (writeErr) {
+                return res.status(500).json({ message: "Order failed!" });
+            }
+            res.status(200).json({ message: "Order placed successfully!" });
+        });
+    });
+});
+
 // Start the server cleanly
 app.listen(PORT, () => {
     console.log("Server is running smoothly on port " + PORT);
